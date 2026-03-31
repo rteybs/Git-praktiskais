@@ -34,19 +34,19 @@
 
     </style>
 
-    <?php
+<?php
         $message = "";
 
         if (isset($_POST['SubmitBtn'])) {
 
-        $user = $_POST['UserNameField'] ?? "";
-        $pass = $_POST['PassWordField'] ?? "";
-        $email = $_POST['EmailField'] ?? "";
+        $user = $_POST['UserNameField'];
+        $pass = $_POST['PassWordField'];
+        $email = $_POST['EmailField'] ;
 
         if (empty($user) || empty($pass) || empty($email)) {
-            $message = "<p style='color:red;'>Lūdzu aizpildiet visus laukus!</p>";
+            $message = "<p>Lūdzu aizpildiet visus laukus!</p>";
         } else {
-            $message = "<p style='color:green;'>Reģistrēšanās veiksmīga!</p>";
+            $message = "<p>Reģistrēšanās veiksmīga!</p>";
         }
     }
 ?>
@@ -58,13 +58,6 @@
         <input placeholder="Email" name="EmailField" type="email">
         <button type="submit" name="SubmitBtn">submit</button>
     </form>
-
-    <script>
-        function submit(){
-            alert("Reģistrēšanās veiksmīga!");
-        }
-
-    </script>
 
     <?= $message ?>
 </body>
